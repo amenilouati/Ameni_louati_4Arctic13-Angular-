@@ -1,0 +1,150 @@
+.detail-container {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.category {
+  color: #e94560;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Badges */
+.badge {
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge-accepted { background: #d4edda; color: #155724; }
+.badge-refused  { background: #f8d7da; color: #721c24; }
+.badge-pending  { background: #fff3cd; color: #856404; }
+
+.divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 1.5rem 0;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 0.6rem;
+}
+
+.description {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.likes-icon { font-size: 1.2rem; }
+
+.likes-count {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.btn-back {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-back:hover {
+  background: #e94560;
+}
+
+.not-found {
+  text-align: center;
+  padding: 4rem;
+  color: #888;
+}
+
+.not-found p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-update {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-back:hover {
+  background: #e94560;
+}

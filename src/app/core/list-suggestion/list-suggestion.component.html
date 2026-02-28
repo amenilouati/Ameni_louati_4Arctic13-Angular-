@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="list-header">
+    <h2 class="page-title">Liste des suggestions</h2>
+    <button class="btn btn-add" (click)="addSuggestion()">+ Ajouter une suggestion</button>
+  </div>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Rechercher une suggestion (titre ou catégorie)..."
+      class="search-input"
+    />
+    <span class="search-icon">🔍</span>
+  </div>
+
+  <!-- Liste des suggestions -->
+  <div class="suggestions-list">
+    <div class="suggestion-card" *ngFor="let suggestion of filteredSuggestions">
+
+      <div class="card-header">
+        <div>
+          <h3 class="suggestion-title">{{ suggestion.title }}</h3>
+          <div class="card-meta">
+            <span class="category">{{ suggestion.category }}</span>
+            <span class="date">{{ suggestion.date | date: 'dd MMM yyyy' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="suggestion-description">{{ suggestion.description }}</p>
+
+      <div class="card-footer">
+        <span class="badge" [ngClass]="getStatusClass(suggestion.status)">
+          {{ getStatusLabel(suggestion.status) }}
+        </span>
+
+        <div class="action-buttons">
+          <ng-container *ngIf="suggestion.status !== 'refusee'">
+            <button class="btn btn-like" (click)="like(suggestion)">
+              👍 Like {{ suggestion.nbLikes }}
+            </button>
+            <button
+              class="btn btn-fav"
+              (click)="addToFavorites(suggestion)"
+              [disabled]="isInFavorites(suggestion)"
+            >
+              {{ isInFavorites(suggestion) ? '❤️ Favori' : '🤍 Ajouter aux favoris' }}
+            </button>
+          </ng-container>
+          <button class="btn btn-details" (click)="viewDetails(suggestion)">
+            🔍 Détails
+          </button>
+          <button class="btn btn-delete" (click)="deleteSuggestion(suggestion)">
+            🗑️ Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-result" *ngIf="filteredSuggestions.length === 0">
+      <p>Aucune suggestion trouvée pour "{{ searchTerm }}"</p>
+    </div>
+  </div>
+
+  <!-- Favoris -->
+  <div class="favorites-section" *ngIf="favorites.length > 0">
+    <h3 class="favorites-title">⭐ Mes Favoris ({{ favorites.length }})</h3>
+    <ul class="favorites-list">
+      <li *ngFor="let fav of favorites" class="favorite-item">
+        <span class="fav-title">{{ fav.title }}</span>
+        <span class="fav-category">{{ fav.category }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
